@@ -1,3 +1,4 @@
+
 social-auth-mitxpro
 ---
 
@@ -13,7 +14,7 @@ If this is your first time using `poetry`, you'll need to configure your pypi cr
 - Configure pypi repository:
   - `poetry config http-basic.pypi USERNAME PASSWORD`
 - Configure testpypi repository:
-  - `poetry config repositories.testpypi https://test.pypi.org/simple`
+  - `poetry config repositories.testpypi https://test.pypi.org/legacy`
   - `poetry config http-basic.testpypi USERNAME PASSWORD`
 
 **NOTE:** when running `poetry` commands, particularly `pylint` and `black`, you must `python3.6`
