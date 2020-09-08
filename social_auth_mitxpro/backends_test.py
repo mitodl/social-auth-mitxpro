@@ -3,6 +3,7 @@ import pytest
 
 from social_auth_mitxpro.backends import MITxProOAuth2
 
+
 # pylint: disable=redefined-outer-name
 
 

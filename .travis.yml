@@ -1,18 +1,23 @@
 language: python
-python:
-  - 3.6
 
 cache:
   pip: true
-  directories:
-    - ${VIRTUAL_ENV}
-
-before_install:
-  - curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python
-  - source $HOME/.poetry/env
 
 install:
-  - pip install tox tox-pyenv
+  - pip install poetry
+  - poetry install -v
 
-script:
-  - tox
+jobs:
+  include:
+    - name: Python 3.5
+      python: 3.5
+      script: pytest
+    - name: Python 3.8
+      python: 3.8
+      script: pytest
+    - name: Linting
+      python: 3.8
+      script:
+        - pylint social_auth_mitxpro/
+        - black --check .
+        - isort -c
