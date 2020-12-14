@@ -1,0 +1,71 @@
+name: CI
+on: [push]
+jobs:
+  python35-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Apt install
+        run: cat Aptfile | sudo xargs apt-get install
+
+      - name: Python setup
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.5"
+
+      - id: cache
+        uses: actions/cache@v1
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Poetry install
+        run: pip install -Iv Poetry==1.1.4
+
+      - name: Install dependencies
+        run: poetry install -v
+
+      - name: Tests
+        run: poetry run pytest
+
+  python38-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Apt install
+        run: cat Aptfile | sudo xargs apt-get install
+
+
+      - name: Python setup
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.8"
+
+      - id: cache
+        uses: actions/cache@v1
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Poetry install
+        run: pip install -Iv Poetry==1.1.4
+
+      - name: Install dependencies
+        run: poetry install -v
+
+      - name: Tests
+        run: poetry run pytest
+
+      - name: Linting
+        run: |
+          poetry run pylint social_auth_mitxpro/
+          poetry run black --check .
+          poetry run isort -c
