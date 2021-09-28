@@ -21,15 +21,14 @@ classifiers = [
     "Natural Language :: English",
     "Operating System :: OS Independent",
     "Programming Language :: Python",
-    "Programming Language :: Python :: 2.7",
-    "Programming Language :: Python :: 3.5",
-    "Programming Language :: Python :: 3.8"
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9"
 ]
 
 [tool.poetry.dependencies]
 
-python = "~2.7 || ~3.5 || ~3.8"
-social-auth-core = "^4.0"
+python = "~3.8 || ~3.9"
+social-auth-core = "^4.1.0"
 attrs = "19.3.0"
 
 [tool.poetry.dev-dependencies]
@@ -39,14 +38,14 @@ black = { version = "=18.9b0", python = "~3.8" }
 isort = "=4.3.4"
 
 # Linters
-pylint = { version = "^2.0", python = "~3.5 || ~3.8" }
+pylint = { version = "^2.0", python = "~3.8" }
 
 # Testing
 pytest = "~4.4.0"
 pytest-cov = "*"
 pytest-mock = "1.10.1"
 responses = "0.10.5"
-typing = { version = "^3.6.6", python = "~3.5 || ~3.8" }
+typing = { version = "^3.6.6", python = "~3.8" }
 codecov = "*"
 
 [build-system]
