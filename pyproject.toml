@@ -1,7 +1,7 @@
 [tool.poetry]
 
 name = "social-auth-mitxpro"
-version = "0.4"
+version = "0.5"
 description = "python-social-auth backend for mitxpro"
 
 license = "MIT"
@@ -29,7 +29,7 @@ classifiers = [
 [tool.poetry.dependencies]
 
 python = "~2.7 || ~3.5 || ~3.8"
-social-auth-core = "^1.7.0"
+social-auth-core = "^4.0"
 attrs = "19.3.0"
 
 [tool.poetry.dev-dependencies]
