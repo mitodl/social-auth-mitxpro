@@ -28,7 +28,7 @@ class MITxProOAuth2(BaseOAuth2):
         root = self.setting("API_ROOT")
 
         if root and root[-1] != "/":
-            root = "{}/".format(root)
+            root = f"{root}/"
 
         return root
 
@@ -45,7 +45,7 @@ class MITxProOAuth2(BaseOAuth2):
         Args:
             path (str): relative api path
         """
-        return "{}{}".format(self.api_root(), path)
+        return f"{self.api_root()}{path}"
 
     def get_user_details(self, response):
         """Return user details from xPro account"""
@@ -58,5 +58,5 @@ class MITxProOAuth2(BaseOAuth2):
     def user_data(self, access_token, *args, **kwargs):
         """Loads user data from xpro"""
         url = self.api_url("api/users/me")
-        headers = {"Authorization": "Bearer {}".format(access_token)}
+        headers = {"Authorization": f"Bearer {access_token}"}
         return self.get_json(url, headers=headers)

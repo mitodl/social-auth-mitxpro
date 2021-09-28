@@ -1,4 +1,6 @@
 """Tests for our backend"""
+from urllib.parse import urljoin
+
 import pytest
 
 from social_auth_mitxpro.backends import MITxProOAuth2
@@ -34,21 +36,24 @@ def test_get_user_details(backend, response, expected):
     assert backend.get_user_details(response) == expected
 
 
-@pytest.mark.parametrize(
-    "api_root", ["http://xpro.example.com/", "http://xpro.example.com"]
-)
-def test_user_data(backend, strategy, mocked_responses, api_root):
+def test_user_data(backend, strategy, mocked_responses):
     """Tests that the backend makes a correct appropriate request"""
     access_token = "user_token"
+    api_root = "http://xpro.example.com/"
     response = {"username": "abc123", "email": "user@example.com", "name": "Jane Doe"}
 
     mocked_responses.add(
-        mocked_responses.GET, "http://xpro.example.com/api/users/me", json=response
+        mocked_responses.GET, urljoin(api_root, "/api/users/me"), json=response
     )
+    settings = {"API_ROOT": api_root}
 
-    strategy.setting.return_value = api_root
+    def _setting(name, *, backend, default=None):  # pylint: disable=unused-argument
+        """Dummy setting func"""
+        return settings.get(name, default)
 
-    assert backend.user_data(access_token)
+    strategy.setting.side_effect = _setting
+
+    assert backend.user_data(access_token) == response
 
     request, _ = mocked_responses.calls[0]
 
