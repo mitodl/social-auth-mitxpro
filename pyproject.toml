@@ -29,26 +29,26 @@ classifiers = [
 
 python = "~3.8 || ~3.9"
 social-auth-core = "^4.1.0"
-attrs = "19.3.0"
+attrs = "21.2.0"
 
 [tool.poetry.dev-dependencies]
 
 # Formatters
-black = { version = "=18.9b0", python = "~3.8" }
-isort = "=4.3.4"
+black = { version = "=21.10b0", python = "~3.8" }
+isort = "=5.10.1"
 
 # Linters
-pylint = { version = "^2.0", python = "~3.8" }
+pylint = { version = "2.6.0", python = "~3.8" }
 
 # Testing
-pytest = "~4.4.0"
-pytest-cov = "*"
-pytest-mock = "1.10.1"
+pytest = "6.1.2"
+pytest-cov = "3.0.0"
+pytest-mock = "3.6.1"
 responses = "0.10.5"
 typing = { version = "^3.6.6", python = "~3.8" }
 codecov = "*"
 
 [build-system]
 
-requires = ["poetry>=0.12"]
+requires = ["poetry>=1.1.14"]
 build-backend = "poetry.masonry.api"
