@@ -68,4 +68,3 @@ jobs:
         run: |
           poetry run pylint social_auth_mitxpro/
           poetry run black --check .
-          poetry run isort -c
