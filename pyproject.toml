@@ -50,5 +50,5 @@ codecov = "*"
 
 [build-system]
 
-requires = ["poetry>=1.1.14"]
+requires = ["poetry~=1.1"]
 build-backend = "poetry.masonry.api"
