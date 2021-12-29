@@ -45,3 +45,6 @@ coverage/
 # poetry
 pip-wheel-metadata/
 setup.py
+
+# IDE specific
+.idea/
