@@ -44,7 +44,7 @@ pylint = { version = "2.12.2", python = "~3.8" }
 pytest = "6.1.2"
 pytest-cov = "3.0.0"
 pytest-mock = "3.6.1"
-responses = "0.16.0"
+responses = "0.18.0"
 typing = { version = "^3.6.6", python = "~3.8" }
 codecov = "*"
 
