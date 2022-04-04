@@ -34,7 +34,7 @@ attrs = "21.2.0"
 [tool.poetry.dev-dependencies]
 
 # Formatters
-black = { version = "=21.12b0", python = "~3.8" }
+black = { version = "=22.3.0", python = "~3.8" }
 isort = "=5.10.1"
 
 # Linters
