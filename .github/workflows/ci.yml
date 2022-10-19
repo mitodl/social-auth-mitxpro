@@ -24,7 +24,7 @@ jobs:
             ${{ runner.os }}-pip-
 
       - name: Poetry install
-        run: pip install -Iv Poetry==1.1.4
+        run: pip install -Iv poetry
 
       - name: Install dependencies
         run: poetry install -v
@@ -56,7 +56,7 @@ jobs:
             ${{ runner.os }}-pip-
 
       - name: Poetry install
-        run: pip install -Iv Poetry==1.1.4
+        run: pip install -Iv poetry
 
       - name: Install dependencies
         run: poetry install -v
