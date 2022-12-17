@@ -35,7 +35,7 @@ attrs = "22.1.0"
 
 # Formatters
 black = { version = "=22.12.0", python = "~3.8" }
-isort = "=5.10.1"
+isort = "=5.11.3"
 
 # Linters
 pylint = { version = "2.15.8", python = "~3.8" }
