@@ -1,7 +1,7 @@
 [tool.poetry]
 
 name = "social-auth-mitxpro"
-version = "0.6.1"
+version = "0.6.2"
 description = "python-social-auth backend for mitxpro"
 
 license = "MIT"
