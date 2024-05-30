@@ -1,28 +1,28 @@
 """Tests for our backend"""
+
 from urllib.parse import urljoin
 
 import pytest
 
 from social_auth_mitxpro.backends import MITxProOAuth2
 
-
 # pylint: disable=redefined-outer-name
 
 
-@pytest.fixture
+@pytest.fixture()
 def strategy(mocker):
     """Mock strategy"""
     return mocker.Mock()
 
 
-@pytest.fixture
+@pytest.fixture()
 def backend(strategy):
     """MITxProOAuth2 backend fixture"""
     return MITxProOAuth2(strategy)
 
 
 @pytest.mark.parametrize(
-    "response, expected",
+    "response, expected",  # noqa: PT006
     [
         (
             {"username": "abc123", "email": "user@example.com", "name": "Jane Doe"},
@@ -38,7 +38,7 @@ def test_get_user_details(backend, response, expected):
 
 def test_user_data(backend, strategy, mocked_responses):
     """Tests that the backend makes a correct appropriate request"""
-    access_token = "user_token"
+    access_token = "user_token"  # noqa: S105
     api_root = "http://xpro.example.com/"
     response = {"username": "abc123", "email": "user@example.com", "name": "Jane Doe"}
 
@@ -47,8 +47,8 @@ def test_user_data(backend, strategy, mocked_responses):
     )
     settings = {"API_ROOT": api_root}
 
-    def _setting(name, *, backend, default=None):  # pylint: disable=unused-argument
-        """Dummy setting func"""
+    def _setting(name, *, backend, default=None):  # pylint: disable=unused-argument  # noqa: ARG001
+        """Dummy setting func"""  # noqa: D401
         return settings.get(name, default)
 
     strategy.setting.side_effect = _setting

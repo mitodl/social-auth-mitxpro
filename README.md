@@ -6,7 +6,7 @@ social-auth-mitxpro
 #### Prerequisites
 
 - [`pyenv`](https://github.com/pyenv/pyenv#installation) for managing python versions
-  - Install `python3.6` and `python2.7`
+  - Install `python3.8` and `python3.11`
 - `pip install tox tox-pyenv` for running tests and discovering python versions from `pyenv`
 - [`poetry`](https://poetry.eustace.io/docs/#installation) for building, testing, and releasing
 
@@ -21,13 +21,13 @@ If this is your first time using `poetry`, you'll need to configure your pypi cr
 
 #### Testing
 
-You can just run `tox` locally to test, lint, and check formatting in the supported python versions. This works by having `tox` manage the virtualenvs, which `poetry` then detects and uses. Note that some of the tools (e.g. `pylint`, `black`) only support running in `python3.6` and this is reflected in `tox.ini`.
+You can just run `tox` locally to test, lint, and check formatting in the supported python versions. This works by having `tox` manage the virtualenvs, which `poetry` then detects and uses.
 
 Run individual commands can be run interactively in a `poetry shell` session or directly via `poetry run CMD`:
 
 - `pytest` - run python tests
-- `pylint` - lint python code
-- `black .` - format python code
+- `ruff check` - lint python code
+- `ruff format` - format python code
 
 #### Building
 
