@@ -1,7 +1,7 @@
 name: CI
 on: [push]
 jobs:
-  python39-tests:
+  python311-tests:
     runs-on: ubuntu-latest
 
     steps:
@@ -13,7 +13,7 @@ jobs:
       - name: Python setup
         uses: actions/setup-python@82c7e631bb3cdc910f68e0081d67478d79c6982d # v5
         with:
-          python-version: "3.9"
+          python-version: "3.11"
 
       - id: cache
         uses: actions/cache@v3
@@ -22,7 +22,7 @@ jobs:
           key: ${{ runner.os }}-pip-
           restore-keys: |
             ${{ runner.os }}-pip-
-
+ 
       - name: Poetry install
         run: pip install -Iv poetry
 
