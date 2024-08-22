@@ -33,7 +33,7 @@ attrs = "^24.0.0"
 [tool.poetry.group.dev.dependencies]
 codecov = "*"
 pytest = "6.2.5"
-pytest-cov = "3.0.0"
+pytest-cov = "5.0.0"
 pytest-mock = "3.14.0"
 responses = "0.25.3"
 ruff = "^0.6.0"
