@@ -9,13 +9,13 @@ from social_auth_mitxpro.backends import MITxProOAuth2
 # pylint: disable=redefined-outer-name
 
 
-@pytest.fixture()
+@pytest.fixture
 def strategy(mocker):
     """Mock strategy"""
     return mocker.Mock()
 
 
-@pytest.fixture()
+@pytest.fixture
 def backend(strategy):
     """MITxProOAuth2 backend fixture"""
     return MITxProOAuth2(strategy)
