@@ -1,3 +1,6 @@
+## ⛔️ DEPRECATION WARNING
+
+### **This repository is deprecated. Please see [ol-social-auth](https://github.com/mitodl/open-edx-plugins/tree/main/src/ol_social_auth) for all future updates and development.**
 
 social-auth-mitxpro
 ---
